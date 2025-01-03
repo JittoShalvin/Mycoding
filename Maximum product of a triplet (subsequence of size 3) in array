@@ -1,0 +1,39 @@
+class Main {
+    public static void main(String[] args) {
+        int first=0,second=0,third=0,first_smallest=99999999,second_smallest=99999999;
+       int[] array={13,4,5,86,22,336,23,86,123,345};
+       int n=array.length;
+      
+       for(int i=0;i<n;i++){
+       if(array[i]> first){
+            third=second;
+            second=first;
+           first=array[i];
+          
+       }
+       else if(array[i]> second && array[i]<first){
+           third=second;
+           second=array[i];
+       }
+       else if(array[i]<first && array[i]<second && array[i]>third){
+            third=array[i];
+       }
+       if(array[i]<first_smallest){
+           second_smallest=first_smallest;
+           first_smallest=array[i];
+       }
+       else if(array[i]>first_smallest && array[i]<second_smallest){
+           second_smallest=array[i];
+       }
+    }
+      int one=first*second*third;
+      int two=first*first_smallest*second_smallest;
+    
+      if(one>two){
+          System.out.print(one);
+      }
+      else{
+          System.out.println(two);
+      }
+    }
+}
