@@ -1,0 +1,24 @@
+Second largest number
+
+
+class Main {
+    public static void main(String[] args) {
+        int first=-1,second=-1;
+       int[] array={13,4,5,86,22,336,23,86,123,345};  #array initalation
+       int n=array.length;  #length of array
+      
+       for(int i=0;i<n;i++){
+       if(array[i]> first){
+            second=first;
+           first=array[i];
+          
+       }
+       else if(array[i]> second && array[i]<first){
+           second=array[i];
+       }
+       }
+       System.out.print(second);
+    }
+}
+
+
